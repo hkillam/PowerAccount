@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-May-2016, 12:33:56 PM
+    Author     : Heather Killam
+*/
+
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.section-header {
+    font-size: 35px;
+    font-size: 2.1875rem;
+    font-family: "museo_sans300","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+}
+
+.section-header.section-header-misc {
+    padding-bottom: 10px;
+    border-bottom: solid 20px #21ad96;
+    position: relative;
+    font-family: "museo_sans100","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.section-header.section-header-misc:after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 15px solid transparent;
+    border-top-color: #fff;
+    bottom: -30px;
+    left: 50%;
+    margin-left: -15px;
+}
+
+
+.page-header {
+    position: relative;
+    padding-bottom: 0px;
+    margin: 0px 0 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.page-header::before, .page-header::after {
+    content: "";
+    display: table;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-logo-wrapper h1 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.panel .panel-heading .panel-title {
+    text-align: center;
+    color: #21ad96;
+    font-family: "museo_sans100","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 25px;
+    font-size: 1.5625rem;
+}
