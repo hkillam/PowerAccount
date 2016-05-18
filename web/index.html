@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap:  Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -50,19 +50,18 @@ and open the template in the editor.
                         <div class="panel-heading">
                             <h3 class="panel-title" xs-hidden="">Sign in</h3>
                         </div>
-
-
-                        <form id="signInForm" name="loginForm" novalidate="" role="form" action="/oam/j_spring_security_check" method="post" class="sign-in panel-body clearfix">
+                        
+                        <form name="inputform" action="getaccountbyid.req">
                             <div class="form-group">
-                                <label><span>Username</span>
-                                    <input type="text" required="" data-validate-required-message="This field is required." tabindex="1" class="form-control" autocomplete="off" name="j_username" id="j_username" value="" maxlength="50">
-                                    <a href="/oam/forgotUsernamePage.req" class="secondary">Forgot your Username?</a>
+                                <label><span>Demo Account Number</span>
+                                    <input type="text" name="accountNumber" value="6348558270" required="" data-validate-required-message="This field is required." tabindex="1" class="form-control" autocomplete="off" id="accountNumber"  maxlength="50">
+                                    <a href="#" class="secondary">Sample numbers, sample data</a>
                                 </label>
                             </div>
                             <div class="form-group">
                                 <label><span>Password</span>
-                                    <input type="password" required="" data-validate-required-message="This field is required." tabindex="1" class="form-control" autocomplete="off" name="j_password" id="j_password" value="" maxlength="50">
-                                    <a href="/oam/forgotPasswordPage.req" class="secondary">Forgot your Password?</a>
+                                    <input type="password" data-validate-required-message="This field is required." tabindex="1" class="form-control" autocomplete="off" name="j_password" id="j_password" value="" maxlength="50">
+                                    <a href="#" class="secondary">Forgot your Password?</a>
                                 </label>
                             </div>
                             <div class="checkbox">
@@ -70,68 +69,11 @@ and open the template in the editor.
                                     <input type="checkbox" name="remember" id="remember" value="true" tabindex="1">Remember Username
                                 </label>
                             </div>
-                            <button type="submit" tabindex="1" class="btn btn-primary pull-right">Sign In</button>
+                            <input type="submit" value="Sign In" name="submitButton" class="btn btn-primary pull-right" />
                             <input type="hidden" name="loginPage" id="loginPageId" value="index">
                             <input type="hidden" name="ssoSAML" id="ssoSAMLId" value="">
                             <input type="hidden" name="ssoRelayState" id="ssoRelayStateId" value="">
                         </form>
-                        <script>
-                            $(document).ready(function () {
-
-
-                                if (window.location.href.indexOf("/sso/") > 0) {
-                                    $("#loginPageId").attr("value", "sso");
-                                    $("#ssoSAMLId").attr("value", GetURLParameter("SAMLRequest"));
-                                    $("#ssoRelayStateId").attr("value", GetURLParameter("RelayState"));
-                                }
-
-                                if ($("#attentionMsg").is(':contains("Invalid")')) {
-                                    $("#genericMsgBox").attr("class", "alert alert-warning");
-                                }
-
-                                function GetURLParameter(sParam) {
-                                    var sPageURL = window.location.search.substring(1);
-                                    var sURLVariables = sPageURL.split('&');
-                                    for (var i = 0; i < sURLVariables.length; i++)
-                                    {
-                                        var sParameterName = sURLVariables[i].split('=');
-                                        if (sParameterName[0] == sParam)
-                                        {
-                                            return sParameterName[1];
-                                        }
-                                    }
-                                }
-                            });
-
-                            $('#signInForm').submit(function (e) {
-                                e.preventDefault();
-                                e.stopPropagation();
-
-                                $form = this;
-
-                                var validator = new Parsley($form);
-                                if (validator.validate()) {
-                                    $('button[type="submit"]', $form).attr('disabled', 'disabled');
-                                    $form.submit();
-                                    return false;
-                                }
-                            });
-
-                            $('#j_password').keypress(function (e) {
-                                if (e.which == 13) {
-                                    $('form#signInForm').submit();
-                                    return false;
-                                }
-                            });
-
-
-                        </script>
-
-
-
-
-
-
                     </div>
                     <input type="hidden" id="errorCodeId" value=""> 
                 </div>
@@ -145,7 +87,7 @@ and open the template in the editor.
                             <textformat leading="2"></textformat></p><p class="account-info hidden-xs" align="LEFT">Don't have an account? To register your Xcel Energy account for online access, please have your statement ready and follow the registration process by clicking the following button. After you are registered, you will receive an activation email for completing the registration process.</p>
                             <p></p>
                             <form id="registerNowForm" name="registerNowForm" action="/oam/initRegistration.req">
-                                <button href="account-register.html" class="btn btn-secondary col-xs-12 col-sm-7">Register</button>
+                                <button href="#" class="btn btn-secondary col-xs-12 col-sm-7">Register</button>
                             </form>
                         </div>
                     </div>
